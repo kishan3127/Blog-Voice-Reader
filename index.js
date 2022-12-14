@@ -37,17 +37,16 @@ window.onload = () => {
       // msg.voice = voice;
       msg.text = vmsg.innerText;
       window.speechSynthesis.speak(msg);
-      window.speechSynthesis.getVoices().forEach(function (v) {
-        const node = document.createElement("li");
+      const node = document.createElement("li");
 
-        // Create a text node:
-        const textnode = document.createTextNode(v.name);
+      // Create a text node:
+      const textnode = document.createTextNode(msg.voice.name);
 
-        // Append the text node to the "li" node:
-        node.appendChild(textnode);
+      // Append the text node to the "li" node:
+      node.appendChild(textnode);
 
-        document.querySelector(".list-of-voices").appendChild(node);
-      });
+      document.querySelector(".list-of-voices").appendChild(node);
+
       return false;
     };
 
