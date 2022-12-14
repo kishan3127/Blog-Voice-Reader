@@ -40,7 +40,7 @@ window.onload = () => {
       const node = document.createElement("li");
 
       // Create a text node:
-      const textnode = document.createTextNode(msg.voice.name);
+      const textnode = document.createTextNode(msg.voice.voiceURI);
 
       // Append the text node to the "li" node:
       node.appendChild(textnode);
