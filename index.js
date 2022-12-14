@@ -33,13 +33,11 @@ window.onload = () => {
         }
       });
 
-      msg.voice = window.speechSynthesis.getVoices()[1];
+      msg.voice = window.speechSynthesis.getVoices()[88];
       // msg.voice = voice;
       msg.text = vmsg.innerText;
       window.speechSynthesis.speak(msg);
       window.speechSynthesis.getVoices().forEach(function (v) {
-        console.log(v.name);
-
         const node = document.createElement("li");
 
         // Create a text node:
