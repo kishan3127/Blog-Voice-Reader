@@ -22,13 +22,16 @@ window.onload = () => {
 
     voices();
 
-    window.speechSynthesis.onvoiceschanged = voices;
+    // window.speechSynthesis.onvoiceschanged = voices;
     window.speechSynthesis.cancel();
     // (D) SPEAK
     var speak = () => {
       let msg = new window.SpeechSynthesisUtterance();
-      // var voice = voicess.find(voice => voice.name === 'Google US English');
-      // alert(window.speechSynthesis.getVoices()[88].name)
+      var voice = window.speechSynthesis.getVoices().find((v, i) => {
+        if (v.name == "English United Kingdom") {
+          alert(v?.name);
+        }
+      });
 
       msg.voice = window.speechSynthesis.getVoices()[1];
       // msg.voice = voice;
