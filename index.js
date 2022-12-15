@@ -1,34 +1,28 @@
-function speak() {
-  const text = document.querySelector(".text").innerText;
-  console.log(text);
-  let utterance = new SpeechSynthesisUtterance(text);
-  speechSynthesis.speak(utterance);
-}
-window.onload = () => {
-  // (A) TTS SUPPORTED
-  if ("speechSynthesis" in window) {
-    // (B) GET HTML ELEMENTS
-    // (C) POPULATE AVAILABLE VOICES
-    // (D) SPEAK
-    // (X) TTS NOT SUPPORTED
-  } else {
-    alert("Text-to-speech is not supported on your browser!");
-  }
-};
+// function speak() {
+//   const text = document.querySelector(".text").innerText;
+//   console.log(text);
+//   let utterance = new SpeechSynthesisUtterance(text);
+//   speechSynthesis.speak(utterance);
+// }
+// window.onload = () => {
+//   // (A) TTS SUPPORTED
+//   if ("speechSynthesis" in window) {
+//     // (B) GET HTML ELEMENTS
+//     // (C) POPULATE AVAILABLE VOICES
+//     // (D) SPEAK
+//     // (X) TTS NOT SUPPORTED
+//   } else {
+//     alert("Text-to-speech is not supported on your browser!");
+//   }
+// };
 
 $(document).ready(function () {
   // (A) TTS SUPPORTED
   if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-    const synth = window.speechSynthesis;
-    console.log(synth.getVoices());
+    speechSynthesis.cancel();
 
     let vmsg = document.getElementById("read-from-here");
-    voices = synth.getVoices();
 
-    for (let i = 0; i < voices.length; i++) {
-      console.log(voices[i]);
-    }
     let msg = new window.SpeechSynthesisUtterance(vmsg.innerText);
 
     var speak = () => {
