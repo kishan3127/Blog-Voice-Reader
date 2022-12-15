@@ -1,16 +1,20 @@
 window.onload = () => {
   // (A) TTS SUPPORTED
   if ("speechSynthesis" in window) {
-    let vmsg = document.getElementById("read-from-here");
-
     window.speechSynthesis.cancel();
+    const synth = window.speechSynthesis;
+    console.log(synth.getVoices());
 
-    let msg = new window.SpeechSynthesisUtterance();
+    let vmsg = document.getElementById("read-from-here");
+    voices = synth.getVoices();
+
+    for (let i = 0; i < voices.length; i++) {
+      console.log(voices[i]);
+    }
+    let msg = new window.SpeechSynthesisUtterance(vmsg.innerText);
 
     var speak = () => {
-      msg.text = vmsg.innerText;
-      window.speechSynthesis.speak(msg);
-      return false;
+      speechSynthesis.speak(msg);
     };
 
     document.querySelector(".play-button").addEventListener("click", speak);
