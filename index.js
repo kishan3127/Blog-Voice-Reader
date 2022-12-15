@@ -16,8 +16,7 @@ window.onload = () => {
   }
 };
 
-/* 
-window.onload = () => {
+$(document).ready(function () {
   // (A) TTS SUPPORTED
   if ("speechSynthesis" in window) {
     window.speechSynthesis.cancel();
@@ -41,7 +40,7 @@ window.onload = () => {
     document
       .querySelector(".pause-button")
       .addEventListener("click", function () {
-        window.speechSynthesis.pause();
+        speechSynthesis.pause();
       });
 
     document
@@ -68,5 +67,4 @@ window.onload = () => {
   else {
     alert("Text-to-speech is not supported on your browser!");
   }
-};
- */
+});
