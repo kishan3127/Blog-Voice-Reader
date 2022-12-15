@@ -1,3 +1,26 @@
+// (A) TTS SUPPORTED
+if ("speechSynthesis" in window) {
+  // (B) GET HTML ELEMENTS
+  function speak() {
+    const text = document.querySelector(".text").innerText;
+    console.log(text);
+    let utterance = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(utterance);
+  }
+
+  // (C) POPULATE AVAILABLE VOICES
+  // (D) SPEAK
+
+  // (X) TTS NOT SUPPORTED
+
+  document.querySelector("button").addEventListener("click", function () {
+    speak();
+    console.log("Played");
+  });
+} else {
+  alert("Text-to-speech is not supported on your browser!");
+}
+/* 
 window.onload = () => {
   // (A) TTS SUPPORTED
   if ("speechSynthesis" in window) {
@@ -50,3 +73,4 @@ window.onload = () => {
     alert("Text-to-speech is not supported on your browser!");
   }
 };
+ */
