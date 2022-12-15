@@ -33,7 +33,7 @@ window.onload = () => {
         }
       });
 
-      msg.voice = window.speechSynthesis.getVoices()[0];
+      // msg.voice = window.speechSynthesis.getVoices()[88];
       // msg.voice = voice;
       msg.text = vmsg.innerText;
       window.speechSynthesis.speak(msg);
